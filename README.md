@@ -7,7 +7,7 @@ Pequeno projeto simulando um email sender com workers para compreensão da ferra
 <p align="center">
   <img alt="projectArch" src=".github/projectArch.png" width="50%">
 </p>
-<i>Source: Apostila do curso</i>
+<i align="center">Source: Apostila do curso</i>
 
 ## ⚙️ Tecnologias
 
@@ -53,7 +53,7 @@ docker-compose exec db psql -U postgres -d email_sender -c 'select * from emails
 Estando a execução do compose correta, o backend estará disponível no localhost:80 (padrão), com redirecionamento para /api ao enviar mensagens.
 
 <p align="center">
-  <img alt="containersStatus" src=".github/containersStatus.png" width="70%">
+  <img alt="containersStatus" src=".github/containersStatus.png" width="100%">
 </p>
 
 ## :memo: Licença
