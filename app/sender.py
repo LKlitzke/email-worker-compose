@@ -4,19 +4,20 @@ import json
 import os
 from bottle import Bottle, request
 
-
 class Sender(Bottle):
     def __init__(self):
         super().__init__()
+        # Callback de send
         self.route('/', method='POST', callback=self.send)
         
         redis_host = os.getenv('REDIS_HOST', 'queue')
+        # Porta padrão do Redis = 6379
         self.fila = redis.StrictRedis(host=redis_host, port=6379, db=0)
 
         db_host = os.getenv('DB_HOST', 'db')
         db_user = os.getenv('DB_USER', 'postgres')
         db_name = os.getenv('DB_NAME', 'sender')
-        dsn = f'dbname={db_name} user={db_user} host={db_host}'
+        dsn = f'dbname={db_name} user={db_user} host={db_host} password=postgres'
         self.conn = psycopg2.connect(dsn)
         
     def register_message(self, assunto, mensagem):
@@ -29,7 +30,7 @@ class Sender(Bottle):
         msg = {'assunto': assunto, 'mensagem': mensagem}
         self.fila.rpush('sender', json.dumps(msg))
 
-        print('Mensagem registrada !')
+        print('Mensagem registrada!')
 
     # Sender
     def send(self):
