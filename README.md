@@ -7,7 +7,7 @@ Pequeno projeto simulando um email sender com workers para compreensão da ferra
 <p align="center">
   <img alt="projectArch" src=".github/projectArch.png" width="50%">
 </p>
-<i align="center">Source: Apostila do curso</i>
+<p align="center">Source: Apostila do curso</p>
 
 ## ⚙️ Tecnologias
 
