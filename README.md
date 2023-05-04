@@ -11,8 +11,8 @@ Pequeno projeto simulando um email sender com workers para compreensão da ferra
 
 ## ⚙️ Tecnologias
 
-- Redis(v3.2)
-- Postgres(v.9.6)
+- Redis (v3.2)
+- Postgres (v.9.6)
 - Compose Workers
 - Python (v3.6)
 - Nginx (v1.13)
